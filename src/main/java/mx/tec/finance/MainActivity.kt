@@ -6,15 +6,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 
-class MainPageActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     lateinit var buttonLog : Button
     lateinit var buttonReg : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_page)
-
+        setContentView(R.layout.activity_main)
     }
     public fun clickedLogIn(v : View?) {
 

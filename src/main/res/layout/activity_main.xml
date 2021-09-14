@@ -14,15 +14,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="66dp"
-        android:layout_marginBottom="77dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonReg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/financelogo" />
 
     <Button
         android:id="@+id/buttonLog"
-        android:layout_width="171"
+        android:layout_width="171dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:backgroundTint="#FFFFFF"

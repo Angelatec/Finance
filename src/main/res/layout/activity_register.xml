@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="204dp"
         android:backgroundTint="#262733"
+        android:onClick="registro"
         android:text="REGISTER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/email"
         android:layout_width="242dp"
         android:layout_height="50dp"
         android:layout_marginBottom="164dp"
@@ -34,9 +35,9 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/password"
         android:layout_width="242dp"
-        android:layout_height="50"
+        android:layout_height="50dp"
         android:layout_marginBottom="48dp"
         android:ems="10"
         android:hint="Password"
@@ -49,28 +50,33 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="242"
+        android:id="@+id/fullname"
+        android:layout_width="242dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:ems="10"
         android:hint="Full Name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="329dp" />
+        app:layout_constraintBottom_toTopOf="@+id/username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="242"
+        android:id="@+id/username"
+        android:layout_width="242dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="301dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="382dp" />
+        app:layout_constraintTop_toBottomOf="@+id/fullname" />
 
     <TextView
         android:id="@+id/textView2"
@@ -80,7 +86,7 @@
         android:text="REGISTER"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.267"
         app:layout_constraintStart_toStartOf="parent" />
@@ -88,11 +94,11 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="253dp"
-        android:layout_height="245dp"
+        android:layout_height="0dp"
         android:layout_marginTop="2dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="82dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/fullname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

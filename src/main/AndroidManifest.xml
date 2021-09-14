@@ -10,14 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Finance">
         <activity
+            android:name=".FireBaseActivity"
+            android:exported="true" />
+        <activity
             android:name=".LogInActivity"
             android:exported="true" />
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".MainPageActivity"
-            android:exported="true" />
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
