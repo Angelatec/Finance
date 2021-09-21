@@ -23,26 +23,53 @@ class DetailsActivity : AppCompatActivity() {
         amount = findViewById(R.id.amount)
         category = findViewById(R.id.category)
         description = findViewById(R.id.description)
-
-
         //accesamos a movimientos luego al usuario y finalmente a sus movimientos
-        var data =Firebase.firestore.collection("movimientos").document("angela.itesm.com").collection("movimientos")
-            .get()
-            .addOnSuccessListener { documents ->
-                // recorremos cada movimiento
-                for (document in documents) {
+        if(intent.getStringExtra("name")=="gasto1") {
+            type.setText("Expense")
+            var data = Firebase.firestore.collection("movimientos").document("angela.itesm.com")
+                .collection("gastos").document("SXgYJPnCid0ekqslBQx8")
+                .get()
+                .addOnSuccessListener { document ->
+                    var lista= document.data?.values?.toList()
+                    amount.setText(lista?.get(0)?.toString())
+                    category.setText(lista?.get(1)?.toString())
+                    description.setText(lista?.get(1)?.toString())
 
-                    //document.data.
-                    //Log.d(TAG, "${document.id} => ${document.data().categoria}") //para accesar usamos data().loquequieras
-                    //type.text = document.data().tipo
-                    //amount.text = document.data().importe
-                    //category.text = document.data().tipo
-                    //description.text = document.data().comentarios
-                    type.setText(document.data.values.toString())
                 }
-            }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents: ", exception)
-            }
+                .addOnFailureListener { exception ->
+                    Log.w(TAG, "AAError getting documents: ", exception)
+                }
+        }else if(intent.getStringExtra("name")=="gasto2") {
+            type.setText("Expense")
+            var data = Firebase.firestore.collection("movimientos").document("angela.itesm.com")
+                .collection("gastos").document("nUOd2yje04VeEXRe9QA5")
+                .get()
+                .addOnSuccessListener { document ->
+                    var lista = document.data?.values?.toList()
+                    amount.setText(lista?.get(0)?.toString())
+                    category.setText(lista?.get(1)?.toString())
+                    description.setText(lista?.get(2)?.toString())
+
+                }
+                .addOnFailureListener { exception ->
+                    Log.w(TAG, "AAError getting documents: ", exception)
+                }
+        }
+        else {
+            type.setText("Income")
+            var data = Firebase.firestore.collection("movimientos").document("angela.itesm.com")
+                .collection("ingresos").document("3TlwPqd80VQ48sPkfBMX")
+                .get()
+                .addOnSuccessListener { document ->
+                    var lista = document.data?.values?.toList()
+                    amount.setText(lista?.get(0)?.toString())
+                    category.setText(lista?.get(1)?.toString())
+                    description.setText(lista?.get(2)?.toString())
+
+                }
+                .addOnFailureListener { exception ->
+                    Log.w(TAG, "Error getting documents: ", exception)
+                }
+        }
     }
 }

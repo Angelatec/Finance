@@ -24,9 +24,7 @@ class HomeActivity : AppCompatActivity() {
         buttonGasto = findViewById(R.id.buttonG)
 
     }
-
     public fun details(v : View?) {
-
         val intent = Intent(this, DetailsActivity::class.java)
         startActivity(intent)
     }
