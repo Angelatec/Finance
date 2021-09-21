@@ -6,55 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="223dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/name"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
-
     <TextView
         android:id="@+id/name"
         android:layout_width="152dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="82dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="37dp"
         android:text="ORGANIZE"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/name4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/name4"
-        android:layout_width="0dp"
+        android:layout_width="304dp"
         android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="92dp"
         android:text="FIGURES OF THE MONTH:"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/name2"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:layout_constraintStart_toStartOf="@+id/name2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <TextView
         android:id="@+id/name2"
         android:layout_width="158dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="146dp"
-        android:layout_marginBottom="73dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="347dp"
         android:text="EXPENDITURES:"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/name3"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name4" />
 
@@ -62,40 +47,13 @@
         android:id="@+id/name3"
         android:layout_width="123dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="225dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginBottom="66dp"
         android:text="ENTRIES:"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name2" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="120dp"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="346dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/name2"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
-        app:srcCompat="@drawable/pngtree_vector_plus_icon_png_image_515260" />
+        app:layout_constraintBottom_toTopOf="@+id/name2"
+        app:layout_constraintStart_toStartOf="@+id/name4"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
