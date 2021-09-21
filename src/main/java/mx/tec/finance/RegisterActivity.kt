@@ -29,6 +29,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun registro(view : View?){
+        registrarDatos(view)
 
         Firebase.auth.createUserWithEmailAndPassword(
             email.text.toString(),
@@ -46,24 +47,21 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun registrarDatos(view : View?){
-
-        // 1ero - crear un hashmap
-        val gatito = hashMapOf(
-            "nombre" to nombre.text.toString(),
-            "edad" to username.text.toString()
+        data class user(
+            val name: String? = nombre.text.toString(),
+            val email: String? = this.email.text.toString(),
+            val username: String? = this.username.text.toString()
         )
-
-        Firebase.firestore.collection("gatitos")
-            .add(gatito)
+        var users= user()
+        Firebase.firestore.collection("Users").document(this.email.text.toString())
+            .set(users)
             .addOnSuccessListener {
                 Toast.makeText(this, "wuju", Toast.LENGTH_SHORT).show()
 
-                Log.d("FIREBASE", "id: ${it.id}")
             }
             .addOnFailureListener{
                 Toast.makeText(this, "Fail EFE", Toast.LENGTH_SHORT).show()
 
-                Log.e("FIREBASE", "excepcion: ${it.message}")
             }
     }
 

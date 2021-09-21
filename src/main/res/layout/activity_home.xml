@@ -6,54 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="61dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="37dp"
+        android:text="+"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/name"
-        android:layout_width="152dp"
-        android:layout_height="0dp"
+        android:layout_width="168dp"
+        android:layout_height="45dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="144dp"
         android:layout_marginBottom="37dp"
         android:text="ORGANIZE"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/name4"
+        app:layout_constraintEnd_toStartOf="@+id/button5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/name4"
-        android:layout_width="304dp"
-        android:layout_height="0dp"
+        android:layout_width="292dp"
+        android:layout_height="63dp"
         android:layout_marginStart="2dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="472dp"
         android:text="FIGURES OF THE MONTH:"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/name2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/name2"
-        android:layout_width="158dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="347dp"
+        android:layout_width="165dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="232dp"
         android:text="EXPENDITURES:"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name4" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/name3"
-        android:layout_width="123dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="63dp"
-        android:layout_marginBottom="66dp"
+        android:layout_width="129dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="128dp"
         android:text="ENTRIES:"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/name2"
         app:layout_constraintStart_toStartOf="@+id/name4"
-        app:layout_constraintTop_toBottomOf="@+id/name"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <Button
+        android:id="@+id/buttonI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="details"
+        android:text="500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name3" />
+
+    <Button
+        android:id="@+id/buttonG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:onClick="details"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
