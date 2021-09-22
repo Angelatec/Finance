@@ -8,60 +8,81 @@
 
     <TextView
         android:id="@+id/type"
-        android:layout_width="74dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="93dp"
+        android:layout_width="227dp"
+        android:layout_height="34dp"
         android:text="TYPE"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.011"
         app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="212dp"
+        android:layout_height="141dp"
+        android:layout_marginEnd="28dp"
+        android:text="DESCRIPTION:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/amount"
         android:layout_width="0dp"
         android:layout_height="26dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginBottom="66dp"
+        android:layout_marginEnd="148dp"
         android:text="AMOUNT:"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/description"
-        app:layout_constraintEnd_toEndOf="@+id/category"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/category"
-        app:layout_constraintTop_toBottomOf="@+id/type"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/amount2"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/description"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="350dp"
-        android:text="DESCRIPTION:"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/amount"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/type"
-        app:layout_constraintTop_toBottomOf="@+id/category" />
+        android:id="@+id/amount2"
+        android:layout_width="124dp"
+        android:layout_height="34dp"
+        android:text="AMOUNT:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/amount3"
+        app:layout_constraintEnd_toStartOf="@+id/amount"
+        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/amount3"
+        android:layout_width="118dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="4dp"
+        android:text="CATEGORY:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/category"
-        android:layout_width="195dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="198dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="1dp"
         android:text="CATEGORY:"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.802"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/type" />
+        app:layout_constraintTop_toTopOf="@+id/amount3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="261dp"
-        android:layout_height="0dp"
+        android:layout_width="266dp"
+        android:layout_height="39dp"
         android:layout_marginStart="14dp"
         android:layout_marginTop="16dp"
         android:text="MOVEMENT DETAILS:"
@@ -69,4 +90,16 @@
         app:layout_constraintBottom_toTopOf="@+id/type"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="142dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="284dp"
+        android:text="DESCRIPTION:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

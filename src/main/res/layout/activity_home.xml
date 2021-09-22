@@ -22,14 +22,15 @@
         android:layout_width="168dp"
         android:layout_height="45dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="144dp"
         android:layout_marginBottom="37dp"
         android:text="ORGANIZE"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/name4"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.016"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333" />
 
     <TextView
         android:id="@+id/name4"
@@ -70,9 +71,9 @@
         android:id="@+id/buttonI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:onClick="details"
-        android:text="500"
+        android:layout_marginTop="12dp"
+        android:onClick="ingreso"
+        android:text="4000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,11 +83,23 @@
         android:id="@+id/buttonG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:onClick="details"
+        android:layout_marginTop="20dp"
+        android:onClick="gasto1"
         android:text="200"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name2" />
+
+    <Button
+        android:id="@+id/buttonG2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:onClick="gasto2"
+        android:text="1200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name2" />
 

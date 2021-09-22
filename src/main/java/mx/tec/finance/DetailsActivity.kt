@@ -31,9 +31,9 @@ class DetailsActivity : AppCompatActivity() {
                 .get()
                 .addOnSuccessListener { document ->
                     var lista= document.data?.values?.toList()
-                    amount.setText(lista?.get(0)?.toString())
+                    amount.setText(lista?.get(2)?.toString())
                     category.setText(lista?.get(1)?.toString())
-                    description.setText(lista?.get(1)?.toString())
+                    description.setText(lista?.get(0)?.toString())
 
                 }
                 .addOnFailureListener { exception ->
@@ -46,9 +46,9 @@ class DetailsActivity : AppCompatActivity() {
                 .get()
                 .addOnSuccessListener { document ->
                     var lista = document.data?.values?.toList()
-                    amount.setText(lista?.get(0)?.toString())
+                    amount.setText(lista?.get(2)?.toString())
                     category.setText(lista?.get(1)?.toString())
-                    description.setText(lista?.get(2)?.toString())
+                    description.setText(lista?.get(0)?.toString())
 
                 }
                 .addOnFailureListener { exception ->
@@ -62,9 +62,9 @@ class DetailsActivity : AppCompatActivity() {
                 .get()
                 .addOnSuccessListener { document ->
                     var lista = document.data?.values?.toList()
-                    amount.setText(lista?.get(0)?.toString())
+                    amount.setText(lista?.get(2)?.toString())
                     category.setText(lista?.get(1)?.toString())
-                    description.setText(lista?.get(2)?.toString())
+                    description.setText(lista?.get(0)?.toString())
 
                 }
                 .addOnFailureListener { exception ->

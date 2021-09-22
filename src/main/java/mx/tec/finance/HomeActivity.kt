@@ -24,8 +24,19 @@ class HomeActivity : AppCompatActivity() {
         buttonGasto = findViewById(R.id.buttonG)
 
     }
-    public fun details(v : View?) {
+    public fun ingreso(v : View?) {
         val intent = Intent(this, DetailsActivity::class.java)
+        intent.putExtra("name", "ingreso")
+        startActivity(intent)
+    }
+    public fun gasto1(v : View?) {
+        val intent = Intent(this, DetailsActivity::class.java)
+        intent.putExtra("name", "gasto1")
+        startActivity(intent)
+    }
+    public fun gasto2(v : View?) {
+        val intent = Intent(this, DetailsActivity::class.java)
+        intent.putExtra("name", "gasto2")
         startActivity(intent)
     }
 }
