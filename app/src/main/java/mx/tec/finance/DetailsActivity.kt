@@ -1,10 +1,12 @@
 package mx.tec.finance
 
+import android.content.ContentValues
 import android.content.Intent
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
@@ -35,16 +37,36 @@ class DetailsActivity : AppCompatActivity() {
         amount = findViewById(R.id.amount)
         category = findViewById(R.id.category)
         description = findViewById(R.id.description)
+        imageView = findViewById(R.id.imageView5)
         email= intent.getStringExtra("email").toString()
         type.text=intent.getStringExtra("type")
-        description.text=intent.getStringExtra("description")
-        category.text=intent.getStringExtra("category")
-        amount.text=intent.getStringExtra("amount")
-        imageString = intent.getStringExtra("imageString").toString()
-        imageView = findViewById(R.id.imageView5)
-        val imageBytes = Base64.decode(imageString, 0)
-        val imageBitMap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-        imageView.setImageBitmap(imageBitMap)
+
+       // description.text=intent.getStringExtra("description")
+        //category.text=intent.getStringExtra("category")
+        //amount.text=intent.getStringExtra("amount")
+        //imageString = intent.getStringExtra("imageString").toString()
+        var tipo = "gastos"
+        if (type.text.toString() == "ENTRY") {
+            tipo = "ingresos"
+        }
+        amount.setText("hola")
+        Firebase.firestore.collection("movimientos").document(email).collection(tipo).document(id)
+            .get()
+            .addOnSuccessListener { document ->
+                var lista= document.data?.values?.toList()
+
+                imageString= lista?.get(1).toString()
+                category.setText(lista?.get(2)?.toString())
+                amount.setText(lista?.get(3)?.toString())
+                description.setText(lista?.get(0)?.toString())
+                val imageBytes = Base64.decode(lista?.get(1).toString(), 0)
+                val imageBitMap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+                imageView.setImageBitmap(imageBitMap)
+
+            }
+            .addOnFailureListener { exception ->
+                Log.w(ContentValues.TAG, "Error getting documents: ", exception)
+            }
     }
 
     public fun edit(v : View?) {

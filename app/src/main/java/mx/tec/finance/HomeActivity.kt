@@ -107,10 +107,7 @@ class HomeActivity : AppCompatActivity() , View.OnClickListener{
             intent.putExtra("email", email)
             intent.putExtra("id", arrayGastos[position][0])
             intent.putExtra("type", "EXPENDITURE")
-            intent.putExtra("description", arrayGastos[position][1])
-            intent.putExtra("imageString", arrayGastos[position][2])
-            intent.putExtra("category", arrayGastos[position][3])
-            intent.putExtra("amount",arrayGastos[position][4])
+
             startActivity(intent)
         }else {
             val position = rventries.getChildLayoutPosition(row)

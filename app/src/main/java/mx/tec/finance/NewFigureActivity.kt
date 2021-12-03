@@ -13,6 +13,7 @@ import android.view.View
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.graphics.drawable.toBitmap
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.io.ByteArrayOutputStream
@@ -34,12 +35,9 @@ class NewFigureActivity : AppCompatActivity() {
     lateinit var imageString : String
 
     var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
-
         bitmap = result.data?.extras?.get("data") as Bitmap
         imageView.setImageBitmap(bitmap)
         imageString = BitMapToString(bitmap)
-
-
     }
 
 
@@ -54,7 +52,10 @@ class NewFigureActivity : AppCompatActivity() {
         radioExpense = findViewById(R.id.expense)
         imageView = findViewById(R.id.imageView4)
         selectButton = findViewById(R.id.button17)
+
         bitmap = imageView.drawable.toBitmap()
+        imageString= BitMapToString(bitmap)
+
         selectButton.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, pickImage)
@@ -65,12 +66,13 @@ class NewFigureActivity : AppCompatActivity() {
         if (resultCode == RESULT_OK && requestCode == pickImage) {
             imageUri = data?.data!!
             imageView.setImageURI(imageUri)
-
-            bitmap= MediaStore.Images.Media.getBitmap(this.contentResolver, imageUri)
-            imageString = BitMapToString(bitmap)
+            val imageBitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, imageUri)
+            bitmap= imageBitmap
+            imageString = BitMapToString(imageBitmap)
 
         }
     }
+
     public fun tomarFoto(view: View){
 
         val takePhotoIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -100,15 +102,16 @@ class NewFigureActivity : AppCompatActivity() {
         Firebase.firestore.collection("movimientos").document(email).collection(tipo).document()
             .set(figures)
             .addOnSuccessListener {
+                Toast.makeText(this, "Successfully Added", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener{
                 Toast.makeText(this, "Fail EFE", Toast.LENGTH_SHORT).show()
             }
-        Toast.makeText(this, "Successfully Added", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, HomeActivity::class.java)
         intent.putExtra("email", email)
         startActivity(intent)
     }
+
     public fun back(v : View?) {
         val intent = Intent(this, HomeActivity::class.java)
         intent.putExtra("email", email)
