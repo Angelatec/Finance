@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "414986033607",
+    "project_id": "finance-983e4",
+    "storage_bucket": "finance-983e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414986033607:android:caaa2aff0c4f7bc949a1e2",
+        "android_client_info": {
+          "package_name": "mx.tec.finance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414986033607-b9a46ua540j98g20ba760vibqcsmcr6p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcKkjWnAL-nPVLY_71gFUetXwfjwcZtGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414986033607-b9a46ua540j98g20ba760vibqcsmcr6p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
